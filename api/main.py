@@ -55,7 +55,8 @@ def read_root():
 
 @app.get("/recommend/{user_id}")
 def recommend(user_id: int, n: int = 10):
-    recommendations = get_top_n_recommendations(user_id, model, movies, ratings, n)
+    current_ratings = pd.read_sql('SELECT * FROM ratings', engine)
+    recommendations = get_top_n_recommendations(user_id, model, movies, current_ratings, n)
     return {"user_id": user_id, "recommendations": recommendations}
 
 class RatingInput(BaseModel):
