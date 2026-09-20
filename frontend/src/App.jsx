@@ -12,7 +12,7 @@ function App() {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch(`http://127.0.0.1:8000/recommend/${userId}`);
+      const response = await fetch(`https://movie-recommender-api-5qmo.onrender.com/recommend/${userId}`);
       if (!response.ok) throw new Error('User not found or server error');
       const data = await response.json();
       setRecommendations(data.recommendations);
