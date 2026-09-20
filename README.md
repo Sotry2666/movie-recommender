@@ -19,10 +19,10 @@ The goal was to build the full pipeline end to end — from raw data to a deploy
 ## Architecture
 
 ```
-┌─────────────┐      ┌──────────────┐      ┌─────────────────┐      ┌────────────────┐
-│   React     │ ───▶ │   FastAPI    │ ───▶ │  Trained SVD    │      │   PostgreSQL   │
-│  (Vercel)   │ ◀─── │  (Render)    │ ◀─── │  Model (.pkl)   │      │    (Neon)      │
-└─────────────┘      └──────┬───────┘      └─────────────────┘      └────────┬───────┘
+┌─────────────┐       ┌──────────────┐      ┌─────────────────┐      ┌────────────────┐
+│   React     │ ───>  │   FastAPI    │ ───> │  Trained SVD    │      │   PostgreSQL   │
+│  (Vercel)   │ <───  │  (Render)    │ <─── │  Model (.pkl)   │      │    (Neon)      │
+└─────────────┘       └──────┬───────┘      └─────────────────┘      └────────┬───────┘
                              │                                                │
                              └────────────────────────────────────────────────┘
                                    reads movies/ratings, writes new ratings
