@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-const API_URL = 'https://movie-recommender-phi-seven.vercel.app/';
+const API_URL = 'https://movie-recommender-api-5qmo.onrender.com';
 
 function App() {
   const [userId, setUserId] = useState('');
